@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Invocation : MonoBehaviour
+public class Invocation : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     public int hp = 2;
@@ -51,4 +51,9 @@ public class Invocation : MonoBehaviour
     }
 
     void Destroyer() => Destroy(gameObject);
+
+    public void TakeDamage()
+    {
+        Destroyer();
+    }
 }
