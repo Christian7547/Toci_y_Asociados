@@ -5,7 +5,7 @@ public enum TypeEnemy
     Wizard, Flying, Rider, Warrior
 }
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     public TypeEnemy type;
@@ -131,5 +131,10 @@ public class Enemy : MonoBehaviour
             childrenAnimator.SetTrigger("attack");
             canAttack = false;
         }
+    }
+
+    public void TakeDamage()
+    {
+        Destroy(gameObject);
     }
 }
