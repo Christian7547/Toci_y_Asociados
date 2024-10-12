@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        inventory.Coin = 20f;
+        inventory.Coin = 100f;
         coinsLabel.text = inventory.Coin.ToString();
         inventory.tuki = 0f;
         inventory.iagra = 0f;
