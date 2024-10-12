@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [Header("Stats")]
     public float speed = 7f;
 
-    Rigidbody rb;
+    public Rigidbody rb;
     public Inventory inventory;
     public TMP_Text coinsLabel;
     public TMP_Text itemTukiLabel;
