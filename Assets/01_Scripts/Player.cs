@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [Header("Stats")]
     public float speed = 7f;
+
+    [Header("References")]
+    public GameObject children;
+    public Weapon weapon;
+    public TMP_Text healthIndicator;
+    public int lifes = 3;
 
     Rigidbody rb;
     public Inventory inventory;
@@ -30,18 +38,65 @@ public class Player : MonoBehaviour
         inventory.tuki = 0f;
         inventory.iagra = 0f;
         inventory.clona = 0f;
+        healthIndicator.text = lifes.ToString();
     }
 
     void Update()
     {
         Movement();
+        Attack();
     }
 
     void Movement()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        Rotation(x);
         rb.velocity = new Vector3(x, 0, z) * speed;
+    }
+
+    void Rotation(float toRotate)
+    {
+        if(toRotate > 0)
+        {
+            weapon.toRight = false;
+            children.transform.rotation = Quaternion.Euler(-60, 180, 0);
+        }
+        else
+        {
+            weapon.toRight = true;
+            children.transform.rotation = Quaternion.Euler(60, 0, 0);
+        }
+    }
+
+    void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            weapon.Shoot();
+        }
+    }
+
+    public void TakeDamage()
+    {
+        lifes -= 1;
+        PrintCurrentLifes();
+        if (lifes <= 0)
+            Destroy(gameObject);
+    }
+
+    public void Healing()
+    {
+        if(lifes < 4)
+        {
+            lifes += 1;
+            PrintCurrentLifes();
+        }
+    }
+
+    void PrintCurrentLifes()
+    {
+        healthIndicator.text = lifes.ToString();
     }
 
     #region Shop

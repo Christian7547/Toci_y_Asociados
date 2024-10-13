@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 3032146335867671318}
   m_Layer: 0
   m_Name: PurpleRider
-  m_TagString: Untagged
+  m_TagString: Damageable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 6090798633052372558}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -220,8 +220,8 @@ MonoBehaviour:
   type: 2
   speed: 3
   children: {fileID: 7946699762227255649}
-  invocationPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  invocationPrefab: {fileID: 6867971054775019550, guid: ea484654bed4b3045b9d6073b7d30158, type: 3}
+  firePoint: {fileID: 5878234040377937066}
 --- !u!65 &3032146335867671318
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -243,6 +243,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0407782, y: 0.85681957, z: 1.7373133}
   m_Center: {x: -2.6975894, y: 0.42194298, z: 0.052665234}
+--- !u!1 &6421871891169571505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5878234040377937066}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5878234040377937066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6421871891169571505}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5, y: -0, z: -0, w: 0.8660254}
+  m_LocalPosition: {x: -0.87, y: -0.31, z: -0.067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 102373486898790198}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7946699762227255649
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7838314517699445970}
+  - {fileID: 5878234040377937066}
   m_Father: {fileID: 2634976240427002305}
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!95 &8478975982385506302

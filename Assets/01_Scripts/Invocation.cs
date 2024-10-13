@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Invocation : MonoBehaviour
+public enum TypeInvocation
+{
+    Health, Damage
+}
+
+public class Invocation : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     public int hp = 2;
+    public TypeInvocation invocation;
 
     [Header("References")]
     public GameObject invocationPrefab;
@@ -34,7 +40,20 @@ public class Invocation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            Destroyer();
+        {
+            if(invocation.ToString() == "Health")
+            {
+                var player = other.GetComponent<Player>();
+                player.Healing();
+                Destroyer();
+            }
+            else
+            {
+                var player = other.GetComponent<Player>();
+                player.TakeDamage();
+                Destroyer();
+            }
+        }
     }
 
     void Movement()
@@ -51,4 +70,9 @@ public class Invocation : MonoBehaviour
     }
 
     void Destroyer() => Destroy(gameObject);
+
+    public void TakeDamage()
+    {
+        Destroyer();
+    }
 }
