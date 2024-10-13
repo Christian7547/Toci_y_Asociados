@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
+  invocation: 1
   invocationPrefab: {fileID: 6508212456121263058}
   children: {fileID: 7183332711398616430}
 --- !u!54 &5416763079653317694

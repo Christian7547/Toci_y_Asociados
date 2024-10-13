@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 
     float timeToDestroy = 2f;
     public float speed = 5f;
+    public bool healthInvocation = false;
 
     void Start()
     {

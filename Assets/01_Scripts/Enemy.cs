@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour, IDamageable
                     }
                     break;
                 case TypeEnemy.Rider:
-                    if (Vector3.Distance(transform.position, target.position) > 0.05f)
+                    if (Vector3.Distance(transform.position, target.position) > 8f)
                     {
                         MoveTowardsTarget();
                     }
@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour, IDamageable
                     {
                         childrenAnimator.SetBool("isMoving", false);
                         CheckIfCanAttack();
-                        Melee();
+                        CreateInvocation();
                     }
                     break;
                 case TypeEnemy.Warrior:

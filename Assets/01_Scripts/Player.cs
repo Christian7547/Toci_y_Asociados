@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class Player : MonoBehaviour
     [Header("References")]
     public GameObject children;
     public Weapon weapon;
+    public TMP_Text healthIndicator;
+    public int lifes = 3;
 
     Rigidbody rb;
     public Inventory inventory;
@@ -34,6 +38,7 @@ public class Player : MonoBehaviour
         inventory.tuki = 0f;
         inventory.iagra = 0f;
         inventory.clona = 0f;
+        healthIndicator.text = lifes.ToString();
     }
 
     void Update()
@@ -70,6 +75,28 @@ public class Player : MonoBehaviour
         {
             weapon.Shoot();
         }
+    }
+
+    public void TakeDamage()
+    {
+        lifes -= 1;
+        PrintCurrentLifes();
+        if (lifes <= 0)
+            Destroy(gameObject);
+    }
+
+    public void Healing()
+    {
+        if(lifes < 4)
+        {
+            lifes += 1;
+            PrintCurrentLifes();
+        }
+    }
+
+    void PrintCurrentLifes()
+    {
+        healthIndicator.text = lifes.ToString();
     }
 
     #region Shop
