@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         lifes -= 1;
         PrintCurrentLifes();
         if (lifes <= 0)
-            Destroy(gameObject);
+            SceneManager.LoadScene("MainMenu");
     }
 
     public void Healing()
