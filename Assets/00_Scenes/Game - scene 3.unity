@@ -5536,7 +5536,7 @@ MonoBehaviour:
   size: {x: 3, y: 3}
   startPos: 0
   rooms:
-  - room: {fileID: 5129105503549579951, guid: 3a3f206f8b03f9147a45db0ceb64841f, type: 3}
+  - room: {fileID: 1378513269379956815, guid: 04311208993a59f4cb5a7ad28593de31, type: 3}
     minPosition: {x: 0, y: 0}
     maxPosition: {x: 0, y: 0}
     hasSpawned: 0
