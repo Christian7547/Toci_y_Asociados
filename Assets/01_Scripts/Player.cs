@@ -60,12 +60,12 @@ public class Player : MonoBehaviour
         if(toRotate > 0)
         {
             weapon.toRight = false;
-            children.transform.rotation = Quaternion.Euler(-60, 180, 0);
+            children.transform.rotation = Quaternion.Euler(-40, 180, 0);
         }
         else
         {
             weapon.toRight = true;
-            children.transform.rotation = Quaternion.Euler(60, 0, 0);
+            children.transform.rotation = Quaternion.Euler(40, 0, 0);
         }
     }
 
