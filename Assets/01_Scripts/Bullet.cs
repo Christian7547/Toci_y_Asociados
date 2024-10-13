@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Damageable"))
         {
+            Debug.Log("Hit " + other.name);
             var enemy = other.GetComponent<IDamageable>();
             enemy.TakeDamage();
         }

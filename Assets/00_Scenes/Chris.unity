@@ -1443,13 +1443,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710065321}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.60876137, y: -0, z: -0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 11, z: 0}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 11, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!114 &710065325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4076,7 +4076,7 @@ MonoBehaviour:
   children: {fileID: 1679810042}
   weapon: {fileID: 3463140023450437385}
   healthIndicator: {fileID: 1171984418}
-  lifes: 4
+  lifes: 100
   inventory: {fileID: 2038532349}
   coinsLabel: {fileID: 714751675}
   itemTukiLabel: {fileID: 207788652}
